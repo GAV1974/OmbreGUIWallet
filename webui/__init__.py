@@ -104,7 +104,7 @@ class BaseWebUI(QMainWindow):
         self.view.setZoomFactor(1)
 
         self.setWindowTitle(APP_NAME)
-        self.icon = self._getQIcon('sumokoin_icon_64.png')
+        self.icon = self._getQIcon('logo_black_64.png')
         self.setWindowIcon(self.icon)
 
         self.setCentralWidget(self.view)
