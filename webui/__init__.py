@@ -414,9 +414,10 @@ class MainWebUI(BaseWebUI):
         self.hub.on_main_wallet_ui_reset_event.emit()
 
     def about(self):
-        QMessageBox.about(self, "About", \
-           (u"%s <br><br>Copyright© 2017 - Sumokoin Projects (www.sumokoin.org)<br>"
-            u"<br><br>Copyright© 2018 - Ombre Project (www.ombre.io)<br>" % self.agent)
+        pass
+        QMessageBox.about(self, "About",
+            "<br><br>Copyright© 2017 - Sumokoin Projects (www.sumokoin.org)<br>" +
+            "<br><br>Copyright© 2018 - Ombre Project (www.ombre.io)<br>")
 
     def _load_wallet(self):
         if self.wallet_info.load():
