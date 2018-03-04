@@ -111,7 +111,7 @@ class WalletCliManager(ProcessManager):
             wallet_args = u'%s/bin/ombre-wallet-cli --generate-new-wallet=%s --log-file=%s' \
                                                 % (resources_path, wallet_file_path, wallet_log_path)
         else:
-            wallet_args = u'%s/bin/ombre-wallet-cli --log-file=%s --daemon-port 19744 --restore-deterministic-wallet' \
+            wallet_args = u'%s/bin/ombre-wallet-cli --log-file=%s --restore-deterministic-wallet' \
                                                 % (resources_path, wallet_log_path)
         ProcessManager.__init__(self, wallet_args, "ombre-wallet-cli")
         self.ready = Event()
