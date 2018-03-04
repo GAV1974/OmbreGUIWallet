@@ -111,7 +111,7 @@ class WalletCliManager(ProcessManager):
             wallet_args = u'%s/bin/ombre-wallet-cli --generate-new-wallet=%s --log-file=%s' \
                                                 % (resources_path, wallet_file_path, wallet_log_path)
         else:
-            wallet_args = u'%s/bin/ombre-wallet-cli --log-file=%s --daemon-port 19735 --restore-deterministic-wallet' \
+            wallet_args = u'%s/bin/ombre-wallet-cli --log-file=%s --daemon-port 19744 --restore-deterministic-wallet' \
                                                 % (resources_path, wallet_log_path)
         ProcessManager.__init__(self, wallet_args, "ombre-wallet-cli")
         self.ready = Event()
@@ -149,7 +149,7 @@ class WalletRPCManager(ProcessManager):
     def __init__(self, resources_path, wallet_file_path, wallet_password, app, log_level=2):
         self.user_agent = str(uuid4().hex)
         wallet_log_path = os.path.join(os.path.dirname(wallet_file_path), "ombre-wallet-rpc.log")
-        wallet_rpc_args = u'%s/bin/ombre-wallet-rpc --wallet-file %s --log-file %s --rpc-bind-port 19736 --user-agent %s --log-level %d' \
+        wallet_rpc_args = u'%s/bin/ombre-wallet-rpc --wallet-file %s --log-file %s --rpc-bind-port 19745 --user-agent %s --log-level %d' \
                                             % (resources_path, wallet_file_path, wallet_log_path, self.user_agent, log_level)
 
         ProcessManager.__init__(self, wallet_rpc_args, "ombre-wallet-rpc")

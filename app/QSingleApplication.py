@@ -18,7 +18,7 @@ from utils.common import getSockDir, makeDir
 DATA_DIR = makeDir(os.path.join(getSockDir(), 'OmbreGUIWallet'))
 
 class QSingleApplication(QApplication):
-    sock_file = 'sumokoin_wallet_sock'
+    sock_file = 'ombre_wallet_sock'
     if sys.platform == 'win32':
         sock_file = "\\\\.\\pipe\\%s" % sock_file
     elif sys.platform == 'darwin':
