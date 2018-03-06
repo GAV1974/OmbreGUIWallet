@@ -834,10 +834,15 @@ html ="""
                     errors.push("Address is required!");
                     $('#send_address').parent().addClass('has-error');
                 }
-                else if(!((address.substr(0, 4) == "Sumo" && address.length == 99) ||
-                    (address.substr(0, 4) == "Sumi"  && address.length == 110) ||
-                    (address.substr(0, 4) == "Subo"  && address.length == 98)))
-                {
+                else if(!(address.substr(0, 4) == "cash" && address.length == 98)) {
+                    if (!(address.length == 98)) {
+                        errors.push("Address is not valid! [DEBUG MESSAGE] Length may need to be set to 99");
+                    } else {
+                        errors.push("Address is not valid!");
+                    }
+                    $('#send_address').parent().addClass('has-error');
+                } else if (!((address.substr(0, 4) == "casi"  && address.length == 110) ||
+                (address.substr(0, 4) == "Subo"  && address.length == 98))) {
                     errors.push("Address is not valid!");
                     $('#send_address').parent().addClass('has-error');
                 }
