@@ -833,7 +833,7 @@ html ="""
                 if(!address){
                     errors.push("Address is required!");
                     $('#send_address').parent().addClass('has-error');
-                } else if(!address.length == 98)) {
+                } else if(!address.length == 98) {
                     errors.push("Address is not 98 characters long.");
                     $('#send_address').parent().addClass('has-error');
                 } else if(!address.substr(0, 4) == "cash" || !address.substr(0, 4) == "Suba") {
