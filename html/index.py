@@ -833,20 +833,13 @@ html ="""
                 if(!address){
                     errors.push("Address is required!");
                     $('#send_address').parent().addClass('has-error');
-                }
-                else if(!(address.substr(0, 4) == "cash" && address.length == 98)) {
-                    if (!(address.length == 98)) {
-                        errors.push("Address is not valid! [DEBUG MESSAGE] Length may need to be set to 99");
-                    } else {
-                        errors.push("Address is not valid!");
-                    }
+                } else if(!address.length == 98)) {
+                    errors.push("Address is not 98 characters long.");
                     $('#send_address').parent().addClass('has-error');
-                } else if (!((address.substr(0, 4) == "casi"  && address.length == 110) ||
-                (address.substr(0, 4) == "Subo"  && address.length == 98))) {
+                } else if(!address.substr(0, 4) == "cash" || !address.substr(0, 4) == "Suba") {
                     errors.push("Address is not valid!");
                     $('#send_address').parent().addClass('has-error');
-                }
-                else{
+                } else{
                     $('#send_address').parent().removeClass('has-error');
                 }
 
